@@ -36,7 +36,8 @@ defined('MOODLE_INTERNAL') || die();
  * @param moodle_page $page
  * @return null
  */
-function theme_celoe_page_init(moodle_page $page) {
+function theme_celoe_page_init(moodle_page $page)
+{
     $page->requires->jquery();
     $page->requires->js('/theme/celoe/javascript/theme.js');
 }
@@ -49,7 +50,8 @@ function theme_celoe_page_init(moodle_page $page) {
  * @param string $theme
  * @return string $css
  */
-function theme_celoe_process_css($css, $theme) {
+function theme_celoe_process_css($css, $theme)
+{
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
 
@@ -79,7 +81,8 @@ function theme_celoe_process_css($css, $theme) {
  * @param array $options
  * @return bool
  */
-function theme_celoe_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_celoe_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
+{
     static $theme;
 
     if (empty($theme)) {
@@ -110,7 +113,8 @@ function theme_celoe_pluginfile($course, $cm, $context, $filearea, $args, $force
  * @param string $filename
  * @return string
  */
-function theme_celoe_serve_css($filename) {
+function theme_celoe_serve_css($filename)
+{
     global $CFG;
     if (!empty($CFG->themedir)) {
         $thestylepath = $CFG->themedir . '/celoe/style/';
@@ -142,7 +146,8 @@ function theme_celoe_serve_css($filename) {
  * @param string $etag
  *
  */
-function theme_celoe_send_unmodified($lastmodified, $etag) {
+function theme_celoe_send_unmodified($lastmodified, $etag)
+{
     $lifetime = 60 * 60 * 24 * 60;
     header('HTTP/1.1 304 Not Modified');
     header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
@@ -162,7 +167,8 @@ function theme_celoe_send_unmodified($lastmodified, $etag) {
  * @param integer $lastmodified
  * @param string $etag
  */
-function theme_celoe_send_cached_css($path, $filename, $lastmodified, $etag) {
+function theme_celoe_send_cached_css($path, $filename, $lastmodified, $etag)
+{
     global $CFG;
     require_once($CFG->dirroot . '/lib/configonlylib.php');
     // For min_enable_zlib_compression.
@@ -170,7 +176,7 @@ function theme_celoe_send_cached_css($path, $filename, $lastmodified, $etag) {
     $lifetime = 60 * 60 * 24 * 60;
 
     header('Etag: "' . $etag . '"');
-    header('Content-Disposition: inline; filename="'.$filename.'"');
+    header('Content-Disposition: inline; filename="' . $filename . '"');
     header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
     header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
     header('Pragma: ');
@@ -192,7 +198,8 @@ function theme_celoe_send_cached_css($path, $filename, $lastmodified, $etag) {
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function theme_celoe_set_customcss($css, $customcss) {
+function theme_celoe_set_customcss($css, $customcss)
+{
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (is_null($replacement)) {
@@ -216,7 +223,8 @@ function theme_celoe_set_customcss($css, $customcss) {
  *      - heading HTML to use for the heading. A logo if one is selected or the default heading.
  *      - footnote HTML to use as a footnote. By default ''.
  */
-function theme_celoe_get_html_for_settings(renderer_base $output, moodle_page $page) {
+function theme_celoe_get_html_for_settings(renderer_base $output, moodle_page $page)
+{
     global $CFG;
     $return = new stdClass;
 
@@ -233,7 +241,7 @@ function theme_celoe_get_html_for_settings(renderer_base $output, moodle_page $p
 
     $return->footnote = '';
     if (!empty($page->theme->settings->footnote)) {
-        $return->footnote = '<div class="footnote text-center">'.format_text($page->theme->settings->footnote).'</div>';
+        $return->footnote = '<div class="footnote text-center">' . format_text($page->theme->settings->footnote) . '</div>';
     }
 
     return $return;
@@ -252,17 +260,18 @@ function theme_celoe_get_html_for_settings(renderer_base $output, moodle_page $p
     $fontwww = '$fontwww: "'. $themewww.'/celoe/fonts/"'.";\n";
     return $fontwww;
 }*/
-function theme_celoe_set_fontwww($css) {
+function theme_celoe_set_fontwww($css)
+{
     global $CFG, $PAGE;
     if (empty($CFG->themewww)) {
-        $themewww = $CFG->wwwroot."/theme";
+        $themewww = $CFG->wwwroot . "/theme";
     } else {
         $themewww = $CFG->themewww;
     }
 
     $tag = '[[setting:fontwww]]';
     $theme = theme_config::load('celoe');
-    $css = str_replace($tag, $themewww.'/celoe/fonts/', $css);
+    $css = str_replace($tag, $themewww . '/celoe/fonts/', $css);
     return $css;
 }
 
@@ -273,7 +282,8 @@ function theme_celoe_set_fontwww($css) {
  * @param string $type
  * @return image $logo
  */
-function theme_celoe_get_logo_url($type='header') {
+function theme_celoe_get_logo_url($type = 'header')
+{
     global $OUTPUT;
     static $theme;
     if (empty($theme)) {
@@ -296,16 +306,17 @@ function theme_celoe_get_logo_url($type='header') {
  * @param string $sliname
  * @return null
  */
-function theme_celoe_render_slideimg($p, $sliname) {
+function theme_celoe_render_slideimg($p, $sliname)
+{
     global $PAGE, $OUTPUT;
 
     $nos = theme_celoe_get_setting('numberofslides');
     $i = $p % 3;
-    $slideimage = $OUTPUT->image_url('home/slide'.$i, 'theme');
+    $slideimage = $OUTPUT->image_url('home/slide' . $i, 'theme');
 
     // Get slide image or fallback to default.
     if (theme_celoe_get_setting($sliname)) {
-        $slideimage = $PAGE->theme->setting_file_url($sliname , $sliname);
+        $slideimage = $PAGE->theme->setting_file_url($sliname, $sliname);
     }
     return $slideimage;
 }
@@ -317,7 +328,8 @@ function theme_celoe_render_slideimg($p, $sliname) {
  * @param bool $format
  * @return bool
  */
-function theme_celoe_get_setting($setting, $format = true) {
+function theme_celoe_get_setting($setting, $format = true)
+{
     global $CFG;
     require_once($CFG->dirroot . '/lib/weblib.php');
     static $theme;
@@ -342,9 +354,10 @@ function theme_celoe_get_setting($setting, $format = true) {
  *
  * @return string
  */
-function theme_celoe_theme_url() {
+function theme_celoe_theme_url()
+{
     global $CFG, $PAGE;
-    $themeurl = $CFG->wwwroot.'/theme/'. $PAGE->theme->name;
+    $themeurl = $CFG->wwwroot . '/theme/' . $PAGE->theme->name;
     return $themeurl;
 }
 
@@ -353,7 +366,8 @@ function theme_celoe_theme_url() {
  * @param string $menuname Footer block link name.
  * @return string The Footer links are return.
  */
-function theme_celoe_generate_links($menuname = '') {
+function theme_celoe_generate_links($menuname = '')
+{
     global $CFG, $PAGE;
     $htmlstr = '';
     $menustr = theme_celoe_get_setting($menuname);
@@ -376,7 +390,10 @@ function theme_celoe_generate_links($menuname = '') {
             if ($pos === false) {
                 $lurl = new moodle_url($lurl);
             }
-            $htmlstr .= '<li><a href="'.$lurl.'">'.$ltxt.'</a></li>'."\n";
+            $icon = '<svg width="7" height="10" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.4146 6.63184L2.37002 0.831146L0.712891 2.1959L6.10385 6.6357L0.712891 11.0687L2.37002 12.4335L9.4146 6.63184Z" fill="black"/>
+            </svg>';
+            $htmlstr .= '<li><a href="' . $lurl . '">'. $icon . $ltxt . '</a></li>' . "\n";
         }
     }
     return $htmlstr;
@@ -387,7 +404,8 @@ function theme_celoe_generate_links($menuname = '') {
  *
  * @return array
  */
-function theme_celoe_hidden_courses_ids() {
+function theme_celoe_hidden_courses_ids()
+{
     global $DB;
     $hcourseids = array();
     $result = $DB->get_records_sql("SELECT id FROM {course} WHERE visible='0' ");
@@ -406,7 +424,8 @@ function theme_celoe_hidden_courses_ids() {
  * @param string $text
  * @return string
  */
-function theme_celoe_strip_html_tags( $text ) {
+function theme_celoe_strip_html_tags($text)
+{
     $text = preg_replace(
         array(
             // Remove invisible content.
@@ -435,7 +454,7 @@ function theme_celoe_strip_html_tags( $text ) {
         ),
         $text
     );
-    return strip_tags( $text );
+    return strip_tags($text);
 }
 
 /**
@@ -446,7 +465,8 @@ function theme_celoe_strip_html_tags( $text ) {
  * @param char $end_char
  * @return string $out
  */
-function theme_celoe_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
+function theme_celoe_course_trim_char($str, $n = 500, $endchar = '&#8230;')
+{
     if (strlen($str) < $n) {
         return $str;
     }
@@ -458,7 +478,7 @@ function theme_celoe_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
 
     $out = "";
     $small = substr($str, 0, $n);
-    $out = $small.$endchar;
+    $out = $small . $endchar;
     return $out;
 }
 
@@ -467,7 +487,8 @@ function theme_celoe_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
  * @param string $key
  * @return string
  */
-function theme_celoe_lang($key = '') {
+function theme_celoe_lang($key = '')
+{
     $pos = strpos($key, 'lang:');
     if ($pos !== false) {
         list($l, $k) = explode(":", $key);
@@ -482,13 +503,14 @@ function theme_celoe_lang($key = '') {
     }
 }
 
-function theme_celoe_get_pattern_color( $css, $type='') {
+function theme_celoe_get_pattern_color($css, $type = '')
+{
     global $OUTPUT;
 
     $rtl  = (right_to_left()) ? '_rtl' : '';
 
-    $patterncolors = array (
-        'default' => array (
+    $patterncolors = array(
+        'default' => array(
             'color_primary' => '#8e558e',
             'color_secondary' => '#a55ba5',
             'color_blackcurrant_approx' => '#382738',
@@ -504,13 +526,13 @@ function theme_celoe_get_pattern_color( $css, $type='') {
             'expanded' => $OUTPUT->image_url('default/t/expanded', 'theme')
         ),
 
-        '1' => array (
+        '1' => array(
             'color_primary' => '#426e17',
             'color_secondary' => '#7abb3b',
             'color_blackcurrant_approx' => '#2f510f',
             'color_plum_approx' => '#528125',
             'color_blackcurrant_90_approx' => 'rgba(47, 81, 15, .9)',
-            'color_french_lilac_approx' =>'#cedec0',
+            'color_french_lilac_approx' => '#cedec0',
             'color_snuff_approx' => '#bad3a3',
             'color_tutu_approx' => '#f2fde8',
             'color_blackcurrant_25_approx' => 'rgba(47, 81, 15, .25)',
@@ -520,7 +542,7 @@ function theme_celoe_get_pattern_color( $css, $type='') {
             'expanded' => $OUTPUT->image_url('cs01/t/expanded', 'theme')
         ),
 
-        '2' => array (
+        '2' => array(
             'color_primary' => '#2b4e84',
             'color_secondary' => '#3e65a0',
             'color_blackcurrant_approx' => '#183054',
@@ -536,7 +558,7 @@ function theme_celoe_get_pattern_color( $css, $type='') {
             'expanded' => $OUTPUT->image_url('cs02/t/expanded', 'theme')
         ),
 
-        '3' => array (
+        '3' => array(
             'color_primary' => '#561209',
             'color_secondary' => '#a64437',
             'color_blackcurrant_approx' => '#5e1e15',
@@ -552,7 +574,7 @@ function theme_celoe_get_pattern_color( $css, $type='') {
             'expanded' => $OUTPUT->image_url('cs03/t/expanded', 'theme')
         ),
 
-        '4' => array (
+        '4' => array(
             'color_primary' => '#20897b',
             'color_secondary' => '#4ba89c',
             'color_blackcurrant_approx' => '#103430',
@@ -568,9 +590,9 @@ function theme_celoe_get_pattern_color( $css, $type='') {
             'expanded' => $OUTPUT->image_url('cs04/t/expanded', 'theme')
         ),
 
-        '5' => array (
-            'color_primary' => '#561209',
-            'color_secondary' => '#AA0000',
+        '5' => array(
+            'color_primary' => '#AA0000',
+            'color_secondary' => '#ffffff',
             'color_blackcurrant_approx' => '#5e1e15',
             'color_plum_approx' => '#70271e',
             'color_blackcurrant_90_approx' => 'rgba(90, 30, 21, .9)',
@@ -587,7 +609,7 @@ function theme_celoe_get_pattern_color( $css, $type='') {
 
     $selectedpattern = theme_celoe_get_setting('patternselect');
     foreach ($patterncolors[$selectedpattern] as $key => $value) {
-        $tag = '[['.$key.']]';
+        $tag = '[[' . $key . ']]';
         $replacement = $value;
         $css = str_replace($tag, $replacement, $css);
     }
@@ -602,7 +624,8 @@ function theme_celoe_get_pattern_color( $css, $type='') {
  * @param type|int $opacity
  * @return type|string
  */
-function theme_celoe_get_hexa($hexa, $opacity) {
+function theme_celoe_get_hexa($hexa, $opacity)
+{
     if (!empty($hexa)) {
         list($r, $g, $b) = sscanf($hexa, "#%02x%02x%02x");
         if ($opacity == '') {

@@ -45,9 +45,6 @@ $string['defaultaddress'] = 'Bagian Akademik Lantai 2 Gedung Utama Jl.Ketintang 
 $string['defaultemailid'] = 'akademik@ittelkom-sby.ac.id';
 $string['defaultphoneno'] = '';
 $string['emailid'] = 'Email';
-$string['fburl'] = 'Facebook';
-$string['fburl_default'] = '';
-$string['fburldesc'] = 'The Facebook url of your organisation.';
 $string['pcourses'] = 'Promoted Courses';
 $string['pcoursesdesc'] = 'Please give the promoted courses id should separated by comma.';
 $string['promotedcoursesheading'] = 'Promoted Courses';
@@ -62,9 +59,6 @@ $string['footnote'] = 'Footnote';
 $string['footnotedefault'] = '';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.Please give the either language key or text.For ex: lang:display or Display';
 $string['frontpageheading'] = 'Front page';
-$string['gpurl'] = 'Google+';
-$string['gpurl_default'] = '';
-$string['gpurldesc'] = 'The Google+ url of your organisation.';
 $string['headerheading'] = 'Header';
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
@@ -74,9 +68,6 @@ $string['numberofslides_desc'] = 'Number of slides on the slider.';
 $string['numberoftmonials'] = 'Number of Testimonials';
 $string['numberoftmonials_desc'] = 'Number of Testimonials on the Home Page.';
 $string['phoneno'] = 'Phone No';
-$string['pinurl'] = 'Pinterest';
-$string['pinurl_default'] = '';
-$string['pinurldesc'] = 'The Pinterest url of your organisation.';
 $string['knowmore'] = 'Know More';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
@@ -99,9 +90,6 @@ $string['slidebuttondesc'] = 'Enter the target destination of the slide\'s image
 either language key or Text.For ex: lang:display or Display';
 $string['toggleslideshow'] = 'Slide show display';
 $string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slide show.';
-$string['twurl'] = 'Twitter';
-$string['twurl_default'] = '';
-$string['twurldesc'] = 'The Twitter url of your organisation.';
 $string['themegeneralsettings'] = 'General';
 $string['patternselect'] = 'Site Color Scheme';
 $string['patternselectdesc'] = 'Select the color scheme you want to have for your site.';
@@ -109,30 +97,26 @@ $string['colorscheme'] = 'Color Scheme';
 $string['footerblock'] = 'Footer Block';
 $string['title'] = 'Title';
 $string['footerbtitle_desc'] = 'Please give the footer block title either language key or text.For ex: lang:display or Display';
-$string['footerbtitle2default'] = 'Quick Links';
-$string['footerbtitle3default'] = 'Follow Us';
-$string['footerbtitle4default'] = 'Contact';
+$string['footerbtitle2default'] = 'Contact';
+$string['footerbtitle3default'] = 'Quick Links';
+$string['footerbtitle4default'] = 'Affiliation';
 $string['footerblink'] = 'Footer Block Link';
-$string['footerblink2default'] = 'Penerimaan Mahasiswa Baru|https://smb.ittelkom-sby.ac.id
+$string['footerblink3default'] = 'Penerimaan Mahasiswa Baru|https://smb.ittelkom-sby.ac.id
 Beasiswa|http://smb.ittelkom-sby.ac.id/beasiswa/
 Fakultas Teknologi Informasi dan Bisnis|https://elearning.ittelkom-sby.ac.id/course/index.php?categoryid=5
 Fakultas Teknologi Elektro dan Industri Cerdas|https://elearning.ittelkom-sby.ac.id/course/index.php?categoryid=3
 Pusat Pengembangan Karir dan Alumni|https://karir.ittelkom-sby.ac.id
 Penelitian dan Pengembangan Masyarakat|https://ppm.ittelkom-sby.ac.id';
+$string['footerblink4default'] = 'Telkom Indonesia|https://www.telkom.co.id/sites
+Yayasan Pendidikan Telkom|https://ypt.or.id/
+Universitas Telkom|https://telkomuniversity.ac.id/
+Institut Teknologi Telkom Purwokerto|https://ittelkom-pwt.ac.id/
+Institut Teknologi Telkom Jakarta|https://jakarta.telkomuniversity.ac.id/';
 $string['footerblink_desc'] = 'You can configure a Footer Block Links here to be shown by themes. Each line consists of some menu text either language key or text, a link URL (optional),separated by pipe characters.For example:
 <pre>
 lang:moodlecommunity|https://moodle.org
 Moodle Support|https://moodle.org/support
 </pre>';
-$string['medianame1'] = 'Facebook';
-$string['medianame2'] = 'Twitter';
-$string['medianame3'] = 'Google Plus';
-$string['medianame4'] = 'Pinterest';
-
-$string['mediaicon1'] = 'fa-facebook-f';
-$string['mediaicon2'] = 'fa-twitter';
-$string['mediaicon3'] = 'fa-google-plus';
-$string['mediaicon4'] = 'fa-pinterest-p';
 $string['default_color'] = 'Default color scheme';
 $string['color_schemes_heading'] = 'Color Schemes';
 $string['promotedtitledefault'] = 'Promoted courses';
@@ -166,7 +150,6 @@ $string['faq'] = 'FAQ';
 $string['support'] = 'Support';
 $string['copyright'] = 'Copyright';
 $string['copyright_default'] = '<p class="text-center">Copyright &copy; 2023 - <a href="https://akademik.ittelkom-sby.ac.id">Bagian Akademik Institut Teknologi Telkom Surabaya</a>';
-$string['footeremail'] = 'E-mail:';
 $string['lavender'] = "Lavender";
 $string['dark_cyan'] = "Dark Cyan";
 $string['green'] = "Green";
@@ -179,4 +162,30 @@ $string['color_2'] = "Color 2";
 $string['color_3'] = "Color 3";
 $string['color_4'] = "Color 4";
 $string['color_5'] = "Color 5";
-$string['phone'] = "Phone";
+
+//footer social media
+
+//facebook
+$string['fburl'] = 'Facebook';
+$string['fburl_default'] = '';
+$string['fburldesc'] = 'The Facebook url of your organisation.';
+
+//instagram
+$string['igurl'] = 'Instagram';
+$string['igurl_default'] = '';
+$string['igurldesc'] = 'The Instagram url of your organisation.';
+
+//youtube
+$string['twurl'] = 'Twitter';
+$string['twurl_default'] = '';
+$string['twurldesc'] = 'The Twitter url of your organisation.';
+
+//website
+$string['weburl'] = 'Website';
+$string['weburl_default'] = '';
+$string['weburldesc'] = 'The Website url of your organisation.';
+
+//youtube
+$string['yturl'] = 'Youtube';
+$string['yturl_default'] = '';
+$string['yturldesc'] = 'The Youtube url of your organisation.';

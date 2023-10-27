@@ -399,29 +399,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_celoe/footerblink2';
-    $title = get_string('footerblink', 'theme_celoe') . ' 2';
-    $description = get_string('footerblink_desc', 'theme_celoe');
-    $default = get_string('footerblink2default', 'theme_celoe');
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $temp->add($setting);
-    /* Footer Block2 */
-
-    /* Footer Block3 */
-    $name = 'theme_celoe_footerblock3heading';
-    $heading = get_string('footerblock', 'theme_celoe') . ' 3 ';
-    $information = '';
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-
-    $name = 'theme_celoe/footerbtitle3';
-    $title = get_string('footerblock', 'theme_celoe') . ' ' . get_string('title', 'theme_celoe') . ' 3 ';
-    $description = get_string('footerbtitle_desc', 'theme_celoe');
-    $default = 'lang:footerbtitle3default';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
-
-    /* Facebook,Pinterest,Twitter,Google+ Settings */
+    /* Facebook,Instagram,Twitter,Website,Youtube Settings */
     $name = 'theme_celoe/fburl';
     $title = get_string('fburl', 'theme_celoe');
     $description = get_string('fburldesc', 'theme_celoe');
@@ -429,6 +407,13 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
+    $name = 'theme_celoe/igurl';
+    $title = get_string('igurl', 'theme_celoe');
+    $description = get_string('igurldesc', 'theme_celoe');
+    $default = get_string('igurl_default', 'theme_celoe');
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+
+    $temp->add($setting);
     $name = 'theme_celoe/twurl';
     $title = get_string('twurl', 'theme_celoe');
     $description = get_string('twurldesc', 'theme_celoe');
@@ -436,33 +421,17 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_celoe/gpurl';
-    $title = get_string('gpurl', 'theme_celoe');
-    $description = get_string('gpurldesc', 'theme_celoe');
-    $default = get_string('gpurl_default', 'theme_celoe');
+    $name = 'theme_celoe/weburl';
+    $title = get_string('weburl', 'theme_celoe');
+    $description = get_string('weburldesc', 'theme_celoe');
+    $default = get_string('weburl_default', 'theme_celoe');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_celoe/pinurl';
-    $title = get_string('pinurl', 'theme_celoe');
-    $description = get_string('pinurldesc', 'theme_celoe');
-    $default = get_string('pinurl_default', 'theme_celoe');
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
-    /* Footer Block3. */
-
-    /* Footer Block4. */
-    $name = 'theme_celoe_footerblock4heading';
-    $heading = get_string('footerblock', 'theme_celoe') . ' 4 ';
-    $information = '';
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-
-    // Fooer Block Title 4.
-    $name = 'theme_celoe/footerbtitle4';
-    $title = get_string('footerblock', 'theme_celoe') . ' ' . get_string('title', 'theme_celoe') . ' 4 ';
-    $description = get_string('footerbtitle_desc', 'theme_celoe');
-    $default = 'lang:footerbtitle4default';
+    $name = 'theme_celoe/yturl';
+    $title = get_string('yturl', 'theme_celoe');
+    $description = get_string('yturldesc', 'theme_celoe');
+    $default = get_string('yturl_default', 'theme_celoe');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
@@ -495,8 +464,57 @@ if (is_siteadmin()) {
     $default = get_string('copyright_default', 'theme_celoe');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
+    /* Footer Block2 */
+
+    /* Footer Block3 */
+
+    $name = 'theme_celoe_footerblock3heading';
+    $heading = get_string('footerblock', 'theme_celoe') . ' 3 ';
+    $information = '';
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+
+    // Footer Block Title 3.
+    $name = 'theme_celoe/footerbtitle3';
+    $title = get_string('footerblock', 'theme_celoe') . ' ' . get_string('title', 'theme_celoe') . ' 3 ';
+    $description = get_string('footerbtitle_desc', 'theme_celoe');
+    $default = 'lang:footerbtitle3default';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_celoe/footerblink3';
+    $title = get_string('footerblink', 'theme_celoe') . ' 3';
+    $description = get_string('footerblink_desc', 'theme_celoe');
+    $default = get_string('footerblink3default', 'theme_celoe');
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    /* Footer Block3. */
+
+    /* Footer Block4. */
+    
+    $name = 'theme_celoe_footerblock4heading';
+    $heading = get_string('footerblock', 'theme_celoe') . ' 4 ';
+    $information = '';
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+
+    $name = 'theme_celoe/footerbtitle4';
+    $title = get_string('footerblock', 'theme_celoe') . ' ' . get_string('title', 'theme_celoe') . ' 5 ';
+    $description = get_string('footerbtitle_desc', 'theme_celoe');
+    $default = 'lang:footerbtitle4default';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_celoe/footerblink4';
+    $title = get_string('footerblink', 'theme_celoe') . ' 4';
+    $description = get_string('footerblink_desc', 'theme_celoe');
+    $default = get_string('footerblink4default', 'theme_celoe');
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $temp->add($setting);
 
     $settings->add($temp);
+
     /* Footer Block4 */
     /*  Footer Settings end */
 }

@@ -64,7 +64,7 @@ echo $OUTPUT->doctype() ?>
     }
 
     ?>
-    <?php require_once(dirname(__FILE__) . '/includes/marketingspots.php'); ?>
+    <?php //require_once(dirname(__FILE__) . '/includes/marketingspots.php'); ?>
     <?php echo $courserenderer->promoted_courses(); ?>
 
     <div id="page" class="container">
