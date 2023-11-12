@@ -68,5 +68,5 @@ $templatecontext = [
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
-$flatnavbar = $OUTPUT->render_from_template('theme_boost/nav-drawer', $templatecontext);
+$flatnavbar = $OUTPUT->render_from_template('theme_celoe/nav-drawer', $templatecontext);
 $headerlayout = $OUTPUT->render_from_template('theme_celoe/header', $templatecontext);

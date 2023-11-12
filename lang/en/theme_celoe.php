@@ -189,3 +189,6 @@ $string['weburldesc'] = 'The Website url of your organisation.';
 $string['yturl'] = 'Youtube';
 $string['yturl_default'] = '';
 $string['yturldesc'] = 'The Youtube url of your organisation.';
+
+$string['username'] = 'NIM / NIP';
+$string['password'] = 'Password Igracias';

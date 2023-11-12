@@ -64,10 +64,14 @@ echo $OUTPUT->doctype() ?>
     }
 
     ?>
-    <?php //require_once(dirname(__FILE__) . '/includes/marketingspots.php'); ?>
+    <?php //require_once(dirname(__FILE__) . '/includes/marketingspots.php'); 
+    ?>
     <?php echo $courserenderer->promoted_courses(); ?>
-
-    <div id="page" class="container">
+    <?php
+    // check if main content is empty
+    $is_hidden = false;
+    ?>
+    <div id="page" class="container" style="<?= $is_hidden ? 'margin:0; padding:0' : '' ?>">
         <header id="page-header" class="clearfix">
             <?php echo $html->heading; ?>
             <div id="page-navbar" class="clearfix">
@@ -78,7 +82,7 @@ echo $OUTPUT->doctype() ?>
                 <?php echo $OUTPUT->course_header(); ?>
             </div>
         </header>
-        <div id="page-content" class="row">
+        <div id="page-content" class="row <?= $is_hidden ? 'd-none' : '' ?>">
             <?php
             if (!empty($PAGE->blocks->region_has_content('side-pre', $OUTPUT))) {
                 $sidepreclass = 'col-md-9';
@@ -98,6 +102,15 @@ echo $OUTPUT->doctype() ?>
         </div>
         <?php echo (!empty($flatnavbar)) ? $flatnavbar : ""; ?>
     </div>
+
+    <?php
+    $sql = "SELECT * FROM course_categories WHERE cc.parent = 0"; 
+    // var_dump($DB);
+    // $parentCategory = $DB->get_record_sql($sql);
+    // if ($parentCategory) {
+    //     var_dump($parentCategory);
+    // }
+    ?>
 
     <script src="<?php echo theme_celoe_theme_url(); ?>/javascript/slick.js"></script>
     <script>

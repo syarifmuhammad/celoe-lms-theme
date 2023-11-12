@@ -214,7 +214,7 @@ class theme_celoe_core_course_renderer extends core_course_renderer
                     if (empty($imgurl)) {
                         $imgurl = $noimgurl;
                     }
-                    $coursehtml = '<div class="col-md-2"><div class="course-box"><div class="thumb"><a href="' . $courseurl . '"><img src="' . $imgurl . '" width="135" height="135" alt=""></a></div><div class="info"><h5><a href="' . $courseurl . '">' . $course->get_formatted_name() . '</a></h5></div></div></div>';
+                    $coursehtml = '<div class="col-md-2"><div class="course-box"><div class="thumb"><a href="' . $courseurl . '"><img src="' . $imgurl . '" width="135" height="135" alt=""></a></div><div class="info"><p><a href="' . $courseurl . '">' . $course->get_formatted_name() . '</a></p></div></div></div>';
 
                     $rowcontent .= $coursehtml;
                 }

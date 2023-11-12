@@ -28,6 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $bodyattributes = $OUTPUT->body_attributes();
 require_once(dirname(__FILE__) .'/includes/header.php');
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -36,7 +37,7 @@ $templatecontext = [
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
-$flatnavbar = $OUTPUT->render_from_template('theme_boost/nav-drawer', $templatecontext);
+$flatnavbar = $OUTPUT->render_from_template('theme_celoe/nav-drawer', $templatecontext);
 echo $OUTPUT->render_from_template('theme_celoe/login', $templatecontext);
 require_once(dirname(__FILE__) .'/includes/footer.php');
 echo $footerlayout;

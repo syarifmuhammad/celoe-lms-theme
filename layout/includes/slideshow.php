@@ -58,16 +58,16 @@ function slideshow()
       $slideimg = theme_celoe_render_slideimg($s1, 'slide' . $s1 . 'image');
       $slidebtn = theme_celoe_get_setting('slide' . $s1 . 'urltext');
       $slidebtn = theme_celoe_lang($slidebtn);
-      // $slidebtnurl = theme_celoe_get_setting('slide' . $s1 . 'url');
-      // $icon = "fa-angle-right";
-      // if (right_to_left()) {
-      //   $icon = "fa-angle-left";
-      // }
+      $slidebtnurl = theme_celoe_get_setting('slide' . $s1 . 'url');
+      $icon = "fa-angle-right";
+      if (right_to_left()) {
+        $icon = "fa-angle-left";
+      }
 
       $content .= html_writer::start_tag('div', array('
                 class' => 'carousel-item' . $clstxt2, 'style' => 'background-image: url(' . $slideimg));
 
-      //$content .= html_writer::start_tag('div', array('class' => 'carousel-overlay-content container-fluid'));
+      $content .= html_writer::start_tag('div', array('class' => 'carousel-overlay-content container-fluid'));
       if ($slidecaption != '' || $slidebtn != '') {
         // $content .= html_writer::start_tag('div', array('class' => 'carousel-content'));
         // $content .= html_writer::start_tag('h2');
@@ -111,10 +111,10 @@ function slideshow()
     $content .= html_writer::end_tag('div');
 ?>
     <style type="text/css">
-      .theme-slider,
+      /* .theme-slider,
       #home-page-carousel .carousel-item {
         height: 550px;
-      }
+      } */
 
       .carousel-item-next.carousel-item-left,
       .carousel-item-prev.carousel-item-right {
