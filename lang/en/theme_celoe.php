@@ -41,7 +41,7 @@ $string['connectus'] = 'Celoe with us';
 $string['contact'] = 'Contact';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
-$string['defaultaddress'] = 'Bagian Akademik Lantai 2 Gedung Utama Jl.Ketintang No. 156, Surabaya';
+$string['defaultaddress'] = 'Bagian Akademik<br>Lantai 2 Gedung Utama<br>Jl.Ketintang No. 156, Surabaya';
 $string['defaultemailid'] = 'akademik@ittelkom-sby.ac.id';
 $string['defaultphoneno'] = '';
 $string['emailid'] = 'Email';
@@ -172,22 +172,22 @@ $string['fburldesc'] = 'The Facebook url of your organisation.';
 
 //instagram
 $string['igurl'] = 'Instagram';
-$string['igurl_default'] = '';
+$string['igurl_default'] = 'https://www.instagram.com/ittelkomsurabaya/';
 $string['igurldesc'] = 'The Instagram url of your organisation.';
 
-//youtube
+//twitter
 $string['twurl'] = 'Twitter';
 $string['twurl_default'] = '';
 $string['twurldesc'] = 'The Twitter url of your organisation.';
 
 //website
 $string['weburl'] = 'Website';
-$string['weburl_default'] = '';
+$string['weburl_default'] = 'https://akademik.ittelkom-sby.ac.id';
 $string['weburldesc'] = 'The Website url of your organisation.';
 
 //youtube
 $string['yturl'] = 'Youtube';
-$string['yturl_default'] = '';
+$string['yturl_default'] = 'https://www.youtube.com/@ITTelkomSurabaya';
 $string['yturldesc'] = 'The Youtube url of your organisation.';
 
 $string['username'] = 'NIM / NIP';

@@ -43,6 +43,7 @@ $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $logo = theme_celoe_get_logo_url();
+$logosmall = $OUTPUT->image_url('home/logosmall', 'theme');
 $surl = new moodle_url('/course/search.php');
 
 $custom = $OUTPUT->custom_menu();
@@ -63,6 +64,7 @@ $templatecontext = [
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'logo' => $logo,
+    'logosmall' => $logosmall,
     'surl' => $surl,
     "customclass" => $class
 ];

@@ -50,97 +50,88 @@ echo $OUTPUT->doctype() ?>
 
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-    <?php
-    require_once(dirname(__FILE__) . '/includes/header.php');
-    echo $headerlayout;
-    ?>
-    <!--E.O.Custom theme header-->
-    <link rel="stylesheet" href="<?php echo theme_celoe_theme_url(); ?>/style/slick.css" />
+    <div id="page-wrapper">
+        <?php
+        require_once(dirname(__FILE__) . '/includes/header.php');
+        echo $headerlayout;
+        ?>
+        <!--E.O.Custom theme header-->
+        <link rel="stylesheet" href="<?php echo theme_celoe_theme_url(); ?>/style/slick.css" />
+        <?php
+        $toggleslideshow = theme_celoe_get_setting('toggleslideshow');
+        if ($toggleslideshow == 1) {
+            require_once(dirname(__FILE__) . '/includes/slideshow.php');
+        }
 
-    <?php
-    $toggleslideshow = theme_celoe_get_setting('toggleslideshow');
-    if ($toggleslideshow == 1) {
-        require_once(dirname(__FILE__) . '/includes/slideshow.php');
-    }
-
-    ?>
-    <?php //require_once(dirname(__FILE__) . '/includes/marketingspots.php'); 
-    ?>
-    <?php echo $courserenderer->promoted_courses(); ?>
-    <?php
-    // check if main content is empty
-    $is_hidden = false;
-    ?>
-    <div id="page" class="container" style="<?= $is_hidden ? 'margin:0; padding:0' : '' ?>">
-        <header id="page-header" class="clearfix">
-            <?php echo $html->heading; ?>
-            <div id="page-navbar" class="clearfix">
-                <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
-                <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-            </div>
-            <div id="course-header">
-                <?php echo $OUTPUT->course_header(); ?>
-            </div>
-        </header>
-        <div id="page-content" class="row <?= $is_hidden ? 'd-none' : '' ?>">
-            <?php
-            if (!empty($PAGE->blocks->region_has_content('side-pre', $OUTPUT))) {
-                $sidepreclass = 'col-md-9';
-            } else {
-                $sidepreclass = 'col-md-12';
-            }
-            ?>
-            <div id="<?php echo $regionbsid ?>" class="<?php echo $sidepreclass; ?>">
+        ?>
+        <?php //require_once(dirname(__FILE__) . '/includes/marketingspots.php'); 
+        ?>
+        <?php echo $courserenderer->promoted_courses(); ?>
+        <?php
+        // check if main content is empty
+        $is_hidden = false;
+        ?>
+        <div id="page" class="container" style="<?= $is_hidden ? 'margin:0; padding:0' : '' ?>">
+            <header id="page-header" class="clearfix">
+                <?php echo $html->heading; ?>
+                <div id="page-navbar" class="clearfix">
+                    <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
+                    <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+                </div>
+                <div id="course-header">
+                    <?php echo $OUTPUT->course_header(); ?>
+                </div>
+            </header>
+            <div id="page-content" class="row <?= $is_hidden ? 'd-none' : '' ?>">
                 <?php
-                echo $OUTPUT->course_content_header();
-                echo $OUTPUT->main_content();
-                echo $OUTPUT->course_content_footer();
+                if (!empty($PAGE->blocks->region_has_content('side-pre', $OUTPUT))) {
+                    $sidepreclass = 'col-md-9';
+                } else {
+                    $sidepreclass = 'col-md-12';
+                }
                 ?>
+                <div id="<?php echo $regionbsid ?>" class="<?php echo $sidepreclass; ?>">
+                    <?php
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    echo $OUTPUT->course_content_footer();
+                    ?>
+                </div>
+                <?php echo $OUTPUT->blocks('side-pre', 'col-md-3'); ?>
+
             </div>
-            <?php echo $OUTPUT->blocks('side-pre', 'col-md-3'); ?>
-
+            <?php echo (!empty($flatnavbar)) ? $flatnavbar : ""; ?>
         </div>
-        <?php echo (!empty($flatnavbar)) ? $flatnavbar : ""; ?>
-    </div>
 
-    <?php
-    $sql = "SELECT * FROM course_categories WHERE cc.parent = 0"; 
-    // var_dump($DB);
-    // $parentCategory = $DB->get_record_sql($sql);
-    // if ($parentCategory) {
-    //     var_dump($parentCategory);
-    // }
-    ?>
+        <script src="<?php echo theme_celoe_theme_url(); ?>/javascript/slick.js"></script>
+        <script>
+            $(function() {
 
-    <script src="<?php echo theme_celoe_theme_url(); ?>/javascript/slick.js"></script>
-    <script>
-        $(function() {
+                if ($('body').hasClass('dir-rtl')) {
+                    var rtl = true;
+                } else {
+                    var rtl = false;
+                }
+                $(".promoted_courses").slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    rtl: rtl,
+                    arrows: true,
+                    swipe: false,
+                    prevArrow: '#Promoted-Courses .pagenav .slick-prev',
+                    nextArrow: '#Promoted-Courses .pagenav .slick-next',
+                });
 
-            if ($('body').hasClass('dir-rtl')) {
-                var rtl = true;
-            } else {
-                var rtl = false;
-            }
-            $(".promoted_courses").slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                rtl: rtl,
-                arrows: true,
-                swipe: false,
-                prevArrow: '#Promoted-Courses .pagenav .slick-prev',
-                nextArrow: '#Promoted-Courses .pagenav .slick-next',
+
             });
+        </script>
 
-
-        });
-    </script>
-
-    <?php
-    require_once(dirname(__FILE__) . '/includes/footer.php');
-    echo $footerlayout;
-    ?>
-    <!--E.O.Custom theme footer-->
-
+        <?php
+        require_once(dirname(__FILE__) . '/includes/footer.php');
+        echo $footerlayout;
+        ?>
+        <!--E.O.Custom theme footer-->
+    </div>
 </body>
 
 </html>

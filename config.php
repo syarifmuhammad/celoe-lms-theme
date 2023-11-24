@@ -52,7 +52,7 @@ $THEME->csstreepostprocessor = 'theme_celoe_css_tree_post_processor';
 $no = get_config('theme_celoe', 'patternselect'); // Selected theme pattern no returned.
 
 if ($no) {
-    $THEME->sheets[] = 'color_scheme-'.$no;
+    $THEME->sheets[] = 'color_scheme-' . $no;
 } else {
     $THEME->sheets[] = 'color_scheme-default';
 }
@@ -100,7 +100,8 @@ $THEME->layouts = array(
     ),
     'login' => array(
         'file' => 'login.php',
-        'regions' => array(),
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.

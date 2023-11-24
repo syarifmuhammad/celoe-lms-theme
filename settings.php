@@ -65,12 +65,12 @@ if (is_siteadmin()) {
     $description = get_string('patternselectdesc', 'theme_celoe');
     $default = 'default';
     $choices = array(
-        'default' => get_string('lavender', 'theme_celoe'),
+        'default' => get_string('custom_red', 'theme_celoe'),
         '1' => get_string('green', 'theme_celoe'),
         '2' => get_string('blue', 'theme_celoe'),
         '3' => get_string('warm_red', 'theme_celoe'),
         '4' => get_string('dark_cyan', 'theme_celoe'),
-        '5' => get_string('custom_red', 'theme_celoe')
+        '5' => get_string('lavender', 'theme_celoe')
     );
 
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
@@ -368,13 +368,21 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
+     // Logo file setting.
+     $name = 'theme_celoe/footerlogo';
+     $title = get_string('footerlogo', 'theme_celoe');
+     $description = get_string('footerlogodesc', 'theme_celoe');
+     $setting = new admin_setting_configstoredfile($name, $title, $description, 'footerlogo');
+     $setting->set_updatedcallback('theme_reset_all_caches');
+     $temp->add($setting);
+
     // Enable / Disable Footer logo.
-    $name = 'theme_celoe/footerblklogo';
-    $title = get_string('footerblklogo', 'theme_celoe');
-    $description = '';
-    $default = 1;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $temp->add($setting);
+    // $name = 'theme_celoe/footerblklogo';
+    // $title = get_string('footerblklogo', 'theme_celoe');
+    // $description = '';
+    // $default = 1;
+    // $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    // $temp->add($setting);
 
     /* Footer Footnote Content */
     $name = 'theme_celoe/footnote';

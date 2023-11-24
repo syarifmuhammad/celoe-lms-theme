@@ -20,7 +20,7 @@
 <nav
   id="header"
   role="banner"
-  class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex"
+  class="fixed-top navbar navbar-light navbar-expand moodle-has-zindex"
 >
   <!-- LMSACE S.o -->
   <div class="header-menubar">
@@ -32,7 +32,7 @@
               aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}"
               aria-controls="nav-drawer"
               type="button"
-              class="btn nav-link float-sm-left mr-1 btn-secondary"
+              class="btn nav-link mr-1 btn-secondary"
               data-action="toggle-drawer"
               data-side="left"
               data-preference="drawer-open-nav"
@@ -46,13 +46,7 @@
           </div>
         </div>
 
-        <ul class="nav navbar-nav">
-          <div class="header-logo">
-            <a class="navbar-brand" href="{{{ config.wwwroot }}}/?redirect=0">
-              <img src="{{ logo }}" width="183" height="67" alt="Celoe" />
-            </a>
-          </div>
-        </ul>
+       
 
         <ul class="nav navbar-nav ml-auto">
           <div class="d-none d-lg-block">{{{ output.search_box }}}</div>

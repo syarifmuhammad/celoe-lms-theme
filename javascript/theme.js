@@ -30,6 +30,7 @@
     /*  ------- Check navbar button status -------- */
     if ($("#header .navbar button").attr('aria-expanded') === "true") {
         $("#header .navbar").find('button').addClass('is-active');
+        $("#btn-burger").addClass('is-active');
     }
 
     /*  ------ Event for change the drawer navbar style  ------ */
@@ -38,9 +39,20 @@
         setTimeout(function() {
             if ($this.attr('aria-expanded') == "true") {
                 $("#header .navbar").find('button').addClass('is-active');
+                $("#btn-burger").addClass('is-active');
+                $("#btn-burger").attr('aria-expanded', false);
             } else {
                 $("#header .navbar").find('button').removeClass('is-active');
+                $("#btn-burger").removeClass('is-active');
+                $("#btn-burger").attr('aria-expanded', true);
             }
+        }, 200);
+    });
+
+    $("#btn-burger").click(function() {
+        var $this = $(this);
+        setTimeout(function() {
+            $("#header .navbar button").click()
         }, 200);
     });
 })(jQuery);

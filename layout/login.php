@@ -34,6 +34,7 @@ $templatecontext = [
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
     'headerlayout' => $headerlayout,
+    'flatnavbar' => $flatnavbar,
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;

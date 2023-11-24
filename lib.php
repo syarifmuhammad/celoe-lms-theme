@@ -391,8 +391,9 @@ function theme_celoe_generate_links($menuname = '')
                 $lurl = new moodle_url($lurl);
             }
             $icon = '<svg width="7" height="10" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.4146 6.63184L2.37002 0.831146L0.712891 2.1959L6.10385 6.6357L0.712891 11.0687L2.37002 12.4335L9.4146 6.63184Z" fill="black"/>
-            </svg>';
+            <path d="M9.4146 6.63175L2.37002 0.831055L0.712891 2.19581L6.10385 6.63561L0.712891 11.0687L2.37002 12.4334L9.4146 6.63175Z" fill="white"/>
+            </svg>
+            ';
             $htmlstr .= '<li><a href="' . $lurl . '">'. $icon . $ltxt . '</a></li>' . "\n";
         }
     }
@@ -511,15 +512,15 @@ function theme_celoe_get_pattern_color($css, $type = '')
 
     $patterncolors = array(
         'default' => array(
-            'color_primary' => '#8e558e',
-            'color_secondary' => '#a55ba5',
-            'color_blackcurrant_approx' => '#382738',
-            'color_plum_approx' => '#764076',
-            'color_blackcurrant_90_approx' => 'rgba(56, 39, 56, 0.9)',
-            'color_french_lilac_approx' => '#ead1ea',
-            'color_snuff_approx' => '#edd3ed',
-            'color_tutu_approx' => '#fef',
-            'color_blackcurrant_25_approx' => 'rgba(56, 39, 56, .25)',
+            'color_primary' => '#AA0000',
+            'color_secondary' => '#ffffff',
+            'color_blackcurrant_approx' => '#5e1e15',
+            'color_plum_approx' => '#70271e',
+            'color_blackcurrant_90_approx' => 'rgba(90, 30, 21, .9)',
+            'color_french_lilac_approx' => '#dec4c1',
+            'color_snuff_approx' => '#f7e3e1',
+            'color_tutu_approx' => '#fff1ef',
+            'color_blackcurrant_25_approx' => 'rgba(90, 30, 21, .25)',
             'collapsed_empty' => $OUTPUT->image_url('default/t/collapsed_empty', 'theme'),
             'collapsed' => $OUTPUT->image_url('default/t/collapsed', 'theme'),
             'collapsed_rtl' => $OUTPUT->image_url('default/t/collapsed_rtl', 'theme'),
@@ -589,17 +590,16 @@ function theme_celoe_get_pattern_color($css, $type = '')
             'collapsed_rtl' => $OUTPUT->image_url('cs04/t/collapsed_rtl', 'theme'),
             'expanded' => $OUTPUT->image_url('cs04/t/expanded', 'theme')
         ),
-
         '5' => array(
-            'color_primary' => '#AA0000',
-            'color_secondary' => '#ffffff',
-            'color_blackcurrant_approx' => '#5e1e15',
-            'color_plum_approx' => '#70271e',
-            'color_blackcurrant_90_approx' => 'rgba(90, 30, 21, .9)',
-            'color_french_lilac_approx' => '#dec4c1',
-            'color_snuff_approx' => '#f7e3e1',
-            'color_tutu_approx' => '#fff1ef',
-            'color_blackcurrant_25_approx' => 'rgba(90, 30, 21, .25)',
+            'color_primary' => '#8e558e',
+            'color_secondary' => '#a55ba5',
+            'color_blackcurrant_approx' => '#382738',
+            'color_plum_approx' => '#764076',
+            'color_blackcurrant_90_approx' => 'rgba(56, 39, 56, 0.9)',
+            'color_french_lilac_approx' => '#ead1ea',
+            'color_snuff_approx' => '#edd3ed',
+            'color_tutu_approx' => '#fef',
+            'color_blackcurrant_25_approx' => 'rgba(56, 39, 56, .25)',
             'collapsed_empty' => $OUTPUT->image_url('cs05/t/collapsed_empty', 'theme'),
             'collapsed' => $OUTPUT->image_url('cs05/t/collapsed', 'theme'),
             'collapsed_rtl' => $OUTPUT->image_url('cs05/t/collapsed_rtl', 'theme'),

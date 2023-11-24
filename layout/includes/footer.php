@@ -43,7 +43,7 @@ $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 
-$footerlogo = !empty(theme_celoe_get_setting('footerblklogo')) ? 1 : 0;
+$footerlogo = !empty(theme_celoe_get_setting('footerlogo')) ? 1 : 0;
 
 $footnote = !empty(theme_celoe_get_setting('footnote')) ? theme_celoe_get_setting('footnote', 'format_html') : '';
 $footnote = theme_celoe_lang($footnote);
@@ -59,7 +59,7 @@ $footerbtitle4 = theme_celoe_lang($footerbtitle4);
 
 $footerlinks3 = theme_celoe_generate_links('footerblink3');
 $footerlinks4 = theme_celoe_generate_links('footerblink4');
-$logourl = theme_celoe_get_logo_url();
+$logourl = theme_celoe_get_logo_url('footer');
 
 $fburl    = theme_celoe_get_setting('fburl');
 $fburl    = trim($fburl);
@@ -81,7 +81,8 @@ $phoneno  = theme_celoe_get_setting('phoneno');
 $copyright = theme_celoe_get_setting('copyright', 'format_html');
 
 
-$block1 = ($footerlogo != '' || $footnote != '') ? 1 : 0;
+// $block1 = ($footerlogo != '' || $footnote != '') ? 1 : 0;
+$block1 = 1;
 $block2 = ($footerbtitle2 != '' || $socialurl != 0 || $address != '' || $emailid != '' || $phoneno != '') ? 1 : 0;
 $block3 = ($footerbtitle3 != '' || $footerlinks3 != '') ? 1 : 0;
 $block4 = ($footerbtitle4 != '' || $footerlinks4 != '') ? 1 : 0;
